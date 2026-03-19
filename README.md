@@ -55,31 +55,6 @@ Utilizamos Hierarchical Dirichlet Process (HDP) para classificar automaticamente
 - Cálculo de massa salarial por categoria
 - Construção de séries temporais 2002-2022
 
-### 3. Modelo Insumo-Produto
-
-**Base:** Tabelas de Recursos e Usos (TRU) do IBGE
-
-**Implementação:**
-- Matriz de coeficientes técnicos (A)
-- Matriz inversa de Leontief (I-A)^(-1)
-- Multiplicadores setoriais de produção e emprego
-- Decomposição do valor adicionado
-
-**Simulações:**
-- Choques de demanda setorial
-- Choques de produtividade
-- Mudança tecnológica (automação)
-- Políticas de incentivo setorial
-
-### 4. Integração ML + Insumo-Produto
-
-Pipeline de análise:
-```
-CBO → HDP → Classificação de Tarefas → 
-RAIS → Emprego por Setor×Tarefa → 
-Modelo I-P → Simulações → 
-Impactos na Distribuição de Renda e Polarização
-```
 
 ## Estrutura do Repositório
 ```
@@ -161,6 +136,7 @@ scikit-learn >= 1.2.0
 scipy >= 1.10.0
 matplotlib >= 3.6.0
 seaborn >= 0.12.0
+PyMuPDF
 ```
 
 **R 4.2+** (opcional, para análises complementares)
