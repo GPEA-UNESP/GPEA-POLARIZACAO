@@ -17,10 +17,10 @@ Este projeto investiga:
 ## Objetivos
 
 ### Objetivo Geral
-Analisar a distribuição funcional da renda entre capital e trabalho na indústria brasileira e sua relação com o fenômeno da polarização do emprego, utilizando um modelo setorial de simulação baseado em insumo-produto.
+Analisar a distribuição funcional da renda entre capital e trabalho na indústria brasileira e sua relação com o fenômeno da polarização do emprego, utilizando um modelo setorial.
 
 ### Objetivos Específicos
-- Classificar ocupações da CBO 2002 segundo conteúdo de tarefas (manual/abstrata, rotineira/não-rotineira) usando Hierarchical Dirichlet Process (HDP)
+- Classificar ocupações da CBO 2002 segundo conteúdo de tarefas (manual/abstrata, rotineira/não-rotineira)
 - Construir séries setoriais de emprego por tipo de tarefa utilizando dados da RAIS
 - Desenvolver modelo de insumo-produto integrado com classificação de ocupações
 - Simular impactos de choques tecnológicos e de demanda na distribuição de renda e composição ocupacional
@@ -32,10 +32,9 @@ Analisar a distribuição funcional da renda entre capital e trabalho na indúst
 
 **Abordagem:** Machine Learning Não Supervisionado
 
-Utilizamos Hierarchical Dirichlet Process (HDP) para classificar automaticamente ocupações da Classificação Brasileira de Ocupações (CBO 2002) em categorias de tarefas, baseando-se em:
+Utilizamos NATURAL LANGUAGE PROCESSING (NLP) para classificar automaticamente ocupações da Classificação Brasileira de Ocupações (CBO 2002) em categorias de tarefas, baseando-se em:
+
 - Descrições oficiais de atividades
-- Competências requeridas
-- Informações complementares da ISCO-08
 
 **Framework teórico:** Autor, Levy e Murnane (2003); Acemoglu e Autor (2011)
 
@@ -59,66 +58,7 @@ Utilizamos Hierarchical Dirichlet Process (HDP) para classificar automaticamente
 ## Estrutura do Repositório
 ```
 .
-├── data/
-│   ├── raw/                      # Dados originais (não versionados)
-│   │   ├── cbo/                  # CBO 2002 oficial
-│   │   ├── rais/                 # Microdados RAIS
-│   │   └── tru/                  # Tabelas de Recursos e Usos IBGE
-│   ├── processed/                # Dados processados
-│   │   ├── cbo_classificada.csv  # CBO com classificação de tarefas
-│   │   ├── emprego_setor_tarefa.csv
-│   │   └── matriz_insumo_produto.csv
-│   └── output/                   # Resultados finais
-│
-├── code/
-│   ├── 01_data_collection/
-│   │   ├── download_cbo.py
-│   │   ├── download_rais.py
-│   │   └── download_tru.py
-│   ├── 02_classification/
-│   │   ├── hdp_model.py          # Implementação HDP
-│   │   ├── train_classifier.py
-│   │   └── validate_classification.py
-│   ├── 03_data_processing/
-│   │   ├── process_rais.py
-│   │   ├── aggregate_employment.py
-│   │   └── prepare_io_matrix.py
-│   ├── 04_modeling/
-│   │   ├── input_output_model.py
-│   │   ├── simulations.py
-│   │   └── multipliers.py
-│   ├── 05_analysis/
-│   │   ├── polarization_metrics.py
-│   │   ├── income_distribution.py
-│   │   └── decomposition.py
-│   └── utils/
-│       ├── data_utils.py
-│       └── visualization.py
-│
-├── notebooks/
-│   ├── exploratory/
-│   │   ├── 01_cbo_exploration.ipynb
-│   │   ├── 02_hdp_tuning.ipynb
-│   │   └── 03_rais_analysis.ipynb
-│   └── results/
-│       ├── 01_classification_results.ipynb
-│       ├── 02_polarization_analysis.ipynb
-│       └── 03_simulation_results.ipynb
-│
-├── docs/
-│   ├── methodology.md
-│   ├── data_sources.md
-│   └── references.bib
-│
-├── results/
-│   ├── figures/
-│   ├── tables/
-│   └── reports/
-│
-├── requirements.txt
-├── environment.yml
-├── LICENSE
-└── README.md
+A ser preenchido conforme andamento da pesquisa
 ```
 
 ## Como Usar
@@ -165,30 +105,14 @@ venv\Scripts\activate  # Windows
 pip install -r requirements.txt
 ```
 
-### Reproduzir Análise
+### Reproduzir Análise (A ser preenchido conforme andamento da pesquisa)
 ```bash
-# 1. Baixar dados (requer configuração de credenciais)
-python code/01_data_collection/download_cbo.py
-python code/01_data_collection/download_rais.py
-
-# 2. Treinar modelo de classificação
-python code/02_classification/train_classifier.py
-
-# 3. Processar dados de emprego
-python code/03_data_processing/process_rais.py
-
-# 4. Executar simulações
-python code/04_modeling/simulations.py
-
-# 5. Gerar relatórios
-python code/05_analysis/generate_report.py
 ```
 
 ### Notebooks Interativos
 ```bash
 jupyter notebook notebooks/
 ```
-
 Recomenda-se seguir a ordem numérica dos notebooks.
 
 ## Fontes de Dados
@@ -219,11 +143,6 @@ Recomenda-se seguir a ordem numérica dos notebooks.
 ## Principais Resultados
 
 (A ser preenchido conforme andamento da pesquisa)
-
-- Número de tópicos descobertos pelo HDP:
-- Proporção de ocupações por categoria:
-- Grau de polarização por setor:
-- Impacto de choques na distribuição funcional:
 
 ## Validação
 
@@ -269,31 +188,27 @@ MIT License - veja arquivo LICENSE para detalhes
 
 ## Contato
 
-**Autor:** Seu Nome  
-**Instituição:** Sua Universidade  
-**Email:** seu.email@universidade.edu.br  
-**Orientador:** Nome do Orientador
+**Autor:** Mateus Oliveira Santos
+**Instituição:** Universidade Estadual Paulista  
+**Email:** Mateus Oliveira Santos 
+**Orientador:** Tatiana Massaroli de Melo
 
 ## Agradecimentos
 
-Este projeto é desenvolvido como parte de uma Iniciação Científica/Tecnológica em [Sua Universidade], com apoio de [agências de fomento, se houver].
+Este projeto é desenvolvido como parte de uma Iniciação Científica/Tecnológica da UNESP com apoio da CNPQ E FAPESP.
 
 Agradecimentos especiais aos desenvolvedores das bibliotecas open-source utilizadas e aos órgãos públicos que disponibilizam dados abertos.
 
 ---
 
-Última atualização: Janeiro 2025
+Última atualização: Março 2026
 ```
 
-# Descrição Curta (para campo "About" do GitHub)
+# Descrição Curta
 ```
-Análise da distribuição funcional da renda e polarização do emprego na indústria brasileira usando machine learning (HDP) para classificação de ocupações e modelo insumo-produto para simulações setoriais. Dados: RAIS, CBO, TRU-IBGE.
+Análise da distribuição funcional da renda e polarização do emprego na indústria brasileira usando machine learning (NLP) para classificação de ocupaçõess. Dados: RAIS, CBO, TRU-IBGE.
 ```
 
-# Alternativa: Descrição Curta Expandida
-```
-Pesquisa sobre polarização do mercado de trabalho brasileiro e distribuição capital-trabalho. Utiliza Hierarchical Dirichlet Process para classificar ocupações CBO por conteúdo de tarefas e modelo de insumo-produto para simular impactos setoriais. Implementação em Python com dados RAIS 2002-2022.
-```
 
 # Tags Sugeridas (GitHub Topics)
 ```
