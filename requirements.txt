@@ -1,0 +1,8 @@
+wordcloud
+scikit-learn
+PyMuPDF
+pandas
+nltk
+unidecode
+seaborn
+matplotlib
